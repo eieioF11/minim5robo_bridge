@@ -21,6 +21,17 @@ endif()
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
 
+# create component
+ament_auto_add_library(${PROJECT_NAME}_component SHARED
+  src/main.cpp
+)
+target_include_directories(${PROJECT_NAME}_component PRIVATE include)
+
+rclcpp_components_register_node(${PROJECT_NAME}_component
+  PLUGIN      "MiniM5Robo::Minim5RoboBridge"
+  EXECUTABLE  ${PROJECT_NAME}
+)
+
 install(
   DIRECTORY  launch config rviz
   DESTINATION share/${PROJECT_NAME}/

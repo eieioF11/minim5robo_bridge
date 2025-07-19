@@ -36,6 +36,13 @@ def generate_launch_description():
                 [os.path.join(pkg_dir, "launch"), "/static_tf.launch.py"]
             ),
         ),
+        Node(
+            package='minim5robo_bridge',
+            executable='minim5robo_bridge',
+            namespace='',
+            output="screen",
+            respawn=True,
+        ),
         # Node(
         #     package='manual_controller',
         #     executable='manual_controller',
