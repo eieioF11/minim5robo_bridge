@@ -42,7 +42,7 @@ if(OpenCV_FOUND)
 endif()
 
 install(
-  DIRECTORY  launch config rviz
+  DIRECTORY  launch config rviz urdf
   DESTINATION share/${PROJECT_NAME}/
 )
 # build testing

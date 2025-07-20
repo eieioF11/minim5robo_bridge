@@ -36,6 +36,11 @@ def generate_launch_description():
                 [os.path.join(pkg_dir, "launch"), "/static_tf.launch.py"]
             ),
         ),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                [os.path.join(pkg_dir, "launch"), "/robot_description.launch.py"]
+            ),
+        ),
         Node(
             package='minim5robo_bridge',
             executable='minim5robo_bridge',
