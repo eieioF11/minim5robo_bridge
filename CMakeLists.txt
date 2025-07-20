@@ -19,6 +19,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake_auto REQUIRED)
+find_package(OpenCV REQUIRED)
 ament_auto_find_build_dependencies()
 
 # create component
@@ -31,6 +32,14 @@ rclcpp_components_register_node(${PROJECT_NAME}_component
   PLUGIN      "MiniM5Robo::Minim5RoboBridge"
   EXECUTABLE  ${PROJECT_NAME}
 )
+
+target_link_libraries(${PROJECT_NAME}_component
+  tbb
+)
+if(OpenCV_FOUND)
+    target_include_directories(${PROJECT_NAME}_component PUBLIC ${OpenCV_INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME}_component ${OpenCV_LIBS})
+endif()
 
 install(
   DIRECTORY  launch config rviz
