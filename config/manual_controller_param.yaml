@@ -1,0 +1,26 @@
+manual_controller_node:
+  ros__parameters:
+    manual_controller:
+      topic_name:
+        cmd_vel: "manual/cmd_vel"
+        auto_cmd_vel: "auto/cmd_vel"
+        joy: "/joy"
+      service_name:
+        reset: "planner/reset"
+      step:
+        vel: 0.1 #[m/s]
+        angular: 0.1 #[rad/s]
+      min:
+        vel: 0.1 #[m/s]
+        angular: 0.1 #[rad/s]
+      max:
+        vel: 0.5 #[m/s]
+        angular: 1.0 #[rad/s]
+      # type
+      # "steamdeck"
+      # "logi_xbox"
+      # "ps4"
+      # "gamesir"
+      # type: "steamdeck"
+      type: "gamesir"
+      threshold: 0.2
