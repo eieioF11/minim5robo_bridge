@@ -21,7 +21,7 @@ echo "source ~/microros_ws/install/local_setup.bash" >> ~/.bashrc
 ## Build
 ```bash
 cd ~/ros2_ws/src
-git clone -b devel https://github.com/eieioF11/minim5robo_bridge.git
+git clone https://github.com/eieioF11/minim5robo_bridge.git
 cd ~/ros2_ws/
 colcon build --symlink-install
 ```
