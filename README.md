@@ -37,5 +37,5 @@ ros2 launch minim5robo_bridge micro_ros_agent.launch.py
 
 ### run minim5robo_bridge
 ```bash
-ros2 launch minim5robo_bridge bringup.launch
+ros2 launch minim5robo_bridge bringup.launch.py
 ```
